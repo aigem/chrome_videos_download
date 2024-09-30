@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手动测试 - 视频下载助手</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="manual_test-page">
+  <div class="container">
+    <header>
+      <h1>手动测试</h1>
+      <button id="themeToggle" aria-label="切换主题">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6.5v11c3.03 0 5.5-2.47 5.5-5.5S15.03 6.5 12 6.5z"/>
+        </svg>
+      </button>
+    </header>
+    <main>
+      <div class="form-group">
+        <label for="manualUrl">视频 URL</label>
+        <input type="url" id="manualUrl" placeholder="请输入视频 URL">
+      </div>
+      <div class="form-group">
+        <label for="manualFormat">视频质量</label>
+        <select id="manualFormat">
+          <option value="1080">1080p</option>
+          <option value="max">最佳质量</option>
+          <option value="4320">4320p (8K)</option>
+          <option value="2160">2160p (4K)</option>
+          <option value="720">720p</option>
+          <option value="480">480p</option>
+          <option value="360">360p</option>
+          <option value="144">144p</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="audioFormat">音频格式</label>
+        <select id="audioFormat">
+          <option value="best">最佳</option>
+          <option value="mp3">MP3</option>
+          <option value="ogg">OGG</option>
+          <option value="wav">WAV</option>
+          <option value="opus">OPUS</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="audioBitrate">音频比特率</label>
+        <select id="audioBitrate">
+          <option value="320">320 kbps</option>
+          <option value="256">256 kbps</option>
+          <option value="128">128 kbps</option>
+          <option value="96">96 kbps</option>
+          <option value="64">64 kbps</option>
+        </select>
+      </div>
+      <button id="manualTestBtn">生成下载链接</button>
+      <div id="manualTestResult" class="status hidden">
+        <div class="actions">
+          <button id="downloadBtn" aria-label="下载">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            下载
+          </button>
+          <button id="copyBtn" aria-label="复制链接">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+            复制链接
+          </button>
+        </div>
+        <div id="filename" class="filename"></div>
+      </div>
+      <div class="tutorial-tip">
+        <a href="https://github.com/aigem/free_video_download_serv00" target="_blank">查看视频教程</a>
+      </div>
+    </main>
+  </div>
+  <script src="manual_test.js" type="module"></script>
+</body>
+</html>
